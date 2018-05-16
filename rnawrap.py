@@ -72,7 +72,7 @@ for woid in woids:
         else:
             break
 
-    # remove first header line, change dir
+    # remove first header line
     samples[:] = [x for x in samples if 'WOI' not in x]
 
     # write to sample master file
@@ -94,7 +94,7 @@ for woid in woids:
     subprocess.run(['perl', '/gscuser/awollam/aw/rnastats_test.pl', id])
 
     # add rnastats to results, output results file for each sample in rnastats.
-    with open(woid+'.rna.stats.tsv', 'r') as rnastatscsv, open('{}.rna.summary.stats.tsv'.format(woid), 'w') as resultscsv:
+    with open('{}.rna.stats.tsv'.format(woid), 'r') as rnastatscsv, open('{}.rna.summary.stats.tsv'.format(woid), 'w') as resultscsv:
 
         rna_stats_reader = csv.DictReader(rnastatscsv, delimiter='\t')
         rna_stats_header = rna_stats_reader.fieldnames
