@@ -18,6 +18,7 @@ if args.w:
 if args.f:
     with open(args.f, 'r') as infilecsv:
         woids = infilecsv.read().splitlines()
+woids = list(filter(None, woids))
 
 directory_summary = dict()
 for woid in woids:
