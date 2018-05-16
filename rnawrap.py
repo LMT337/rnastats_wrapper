@@ -49,7 +49,6 @@ for woid in woids:
         print(ap)
         if 'Administration Project' in ap:
             collection = ap.split(':')[1].strip()
-    print('Admin: {}'.format(collection))
     results['Admin'] = collection
 
     # input master sample sheet for Tissue, Sample Type
